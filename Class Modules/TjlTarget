@@ -1,0 +1,19 @@
+' Set to Private
+Private pTjlTargetIndex
+Private pTjlTargetSum
+
+Property Let TjlTargetIndex(index As Long)
+    pTjlTargetIndex = index
+End Property
+
+Property Get TjlTargetIndex() As Long
+    TjlTargetIndex = pTjlTargetIndex
+End Property
+
+Property Let TjlTargetSum(sum As Double)
+    pTjlTargetSum = sum
+End Property
+
+Property Get TjlTargetSum() As Double
+    TjlTargetSum = pTjlTargetSum
+End Property
