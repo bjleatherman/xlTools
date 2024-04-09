@@ -1,0 +1,18 @@
+Private Sub UserForm_Initialize()
+    Dim ws As Worksheet: Set ws = ActiveSheet
+    Dim colHeaders As Variant: colHeaders = GetDataFromRowNum(ws, 1)
+    ' Comboboxes in the UserForm
+    Dim cmbs As Variant: cmbs = Array(cmbPrevTjl, cmbPrevWt, cmbPlqSegLen, cmbPlqWt, cmbPlqGrade, cmdPlqType)
+    
+    ' Clear ComboBoxes
+    For i = LBound(cmbBoxes) To UBound(cmbBoxes)
+        cmbBoxes(i).Clear
+    Next i
+    
+    For i = LBound(colHeaders) To UBound(colHeaders)
+        For j = LBound(cmbs) To UBound(cmbs)
+            cmbs(j).AddItem colHeaders(1, i)
+        Next j
+    Next i
+    
+End Sub
