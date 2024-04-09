@@ -1,5 +1,9 @@
 Function GetLastRowFromColNum(ws As Worksheet, col As Long) As Long
-    GetLastRowFromColNum = ws.Cells(ws.Rows.count, col).End(xlUp).Row
+    GetLastRowFromColNum = ws.Cells(ws.Rows.count, col).End(xlUp).row
+End Function
+
+Function GetLastColFromRowNum(ws As Worksheet, row As Long) As Long
+    GetLastColFromRowNum = ws.Cells(row, ws.Columns.count).End(xlToLeft).Column
 End Function
 
 Function GetDataFromColNum(ws As Worksheet, col As Long) As Variant
