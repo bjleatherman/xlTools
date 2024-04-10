@@ -23,3 +23,7 @@ Function GetDataFromRowNum(ws As Worksheet, row As Long) As Variant
     End With
     GetDataFromRowNum = data
 End Function
+
+Function ColLetToNumber(letter As String) As Integer
+    ColLetToNumber = Range(letter & "1").Column
+End Function
