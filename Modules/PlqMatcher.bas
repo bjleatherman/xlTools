@@ -3,13 +3,19 @@ Sub MatchPlq()
     Application.ScreenUpdating = False
 
     Dim ws As Worksheet: Set ws = Application.ActiveSheet
-    Dim LastRow As Long: LastRow = GetLastRowFromColNum(ws, 1)
+    Dim lastRow As Long: lastRow = GetLastRowFromColNum(ws, 1)
     Dim cTjlRow As Long: cTjlRow = 2
     Dim fisrtInsertCol As Long: firstInsertCol = 4
     Dim lastInsertCol As Long: lastInsertCol = 10
     Dim targetObj As TjlTarget
     Dim insertRange As Range
     Dim plqTjlStart As Long
+   
+    'Dim frm As Object
+    'Set frm = New UserForm
+    'frm.Show
+   
+    uGetColsForPlqMatch.Show
     
     '''''Get Data'''''
     With ws
@@ -47,12 +53,12 @@ Sub MatchPlq()
             ' Insert the rows
             Else
                 ' Find prev Tjl location where the sum matches the seg length
-                Set targetObj = GetClosestJoint(CDbl(plqTjl(i, 1)), cTjlRow, pTjl, LastRow)
+                Set targetObj = GetClosestJoint(CDbl(plqTjl(i, 1)), cTjlRow, pTjl, lastRow)
                 
                 ' Get Target Row
                 targetRow = targetObj.TjlTargetIndex
                 
-                contextTargetRow = GetTargetRowWithWtContext(pTjl, pWt, cTjlRow, i, plqTjl, plqWt, LastRow)
+                contextTargetRow = GetTargetRowWithWtContext(pTjl, pWt, cTjlRow, i, plqTjl, plqWt, lastRow)
                 
                 ' Determine if a new line needs to be inserted
                 If targetRow = cTjlRow Then
@@ -76,7 +82,7 @@ Sub MatchPlq()
 
 End Sub
 
-Function GetTargetRowWithWtContext(pTjl As Variant, pWt As Variant, cRow As Long, plqIndex As Variant, plqTjl As Variant, plqWt As Variant, LastRow As Long) As Long
+Function GetTargetRowWithWtContext(pTjl As Variant, pWt As Variant, cRow As Long, plqIndex As Variant, plqTjl As Variant, plqWt As Variant, lastRow As Long) As Long
 
     Dim minimumCellSearch As Integer: minimumCellSearch = 5
     Dim odoDriftComp As Double: odoDriftComp = 0.01
@@ -86,8 +92,8 @@ Function GetTargetRowWithWtContext(pTjl As Variant, pWt As Variant, cRow As Long
     Dim forCount As Integer
     Dim revCount As Integer
     
-    forCount = SumTjlByDirectionTillMaxSumReached(0, pTjl, cRow, cSegLen, odoDriftAllowance, LastRow)
-    revCount = SumTjlByDirectionTillMaxSumReached(1, pTjl, cRow, cSegLen, odoDriftAllowance, LastRow)
+    forCount = SumTjlByDirectionTillMaxSumReached(0, pTjl, cRow, cSegLen, odoDriftAllowance, lastRow)
+    revCount = SumTjlByDirectionTillMaxSumReached(1, pTjl, cRow, cSegLen, odoDriftAllowance, lastRow)
     
     'Check if the counts are longer vs the minimum counts
     
@@ -95,7 +101,7 @@ Function GetTargetRowWithWtContext(pTjl As Variant, pWt As Variant, cRow As Long
 
 End Function
 
-Function SumTjlByDirectionTillMaxSumReached(direction As Integer, pTjl As Variant, cRow As Long, cSegLen As Double, tolerance As Double, LastRow As Long) As Long
+Function SumTjlByDirectionTillMaxSumReached(direction As Integer, pTjl As Variant, cRow As Long, cSegLen As Double, tolerance As Double, lastRow As Long) As Long
 
     Dim flag As Boolean: flag = False
     Dim index As Long: index = cRow
@@ -106,7 +112,7 @@ Function SumTjlByDirectionTillMaxSumReached(direction As Integer, pTjl As Varian
     If direction = 0 Then sum = pTjl(cRow, 1)
     
     Do While flag = False
-        If index < LastRow And index > 1 Then
+        If index < lastRow And index > 1 Then
             sum = sum + pTjl(index, 1)
             count = count + 1
             If direction = 0 Then
@@ -126,7 +132,7 @@ Function SumTjlByDirectionTillMaxSumReached(direction As Integer, pTjl As Varian
     
 End Function
 
-Function GetClosestJoint(targetLen As Double, pTjlIndex As Long, pTjl As Variant, LastRow As Long) As TjlTarget
+Function GetClosestJoint(targetLen As Double, pTjlIndex As Long, pTjl As Variant, lastRow As Long) As TjlTarget
 
     Dim targetObj As New TjlTarget
     
@@ -150,7 +156,7 @@ Function GetClosestJoint(targetLen As Double, pTjlIndex As Long, pTjl As Variant
         Do While sum < targetLen
         
             ' If we are at the bottom of the sheet, exit the loop
-            If i >= LastRow Then Exit Do
+            If i >= lastRow Then Exit Do
         
             ' Mark the indexes
             underIndex = i - 1
@@ -180,3 +186,4 @@ Function GetClosestJoint(targetLen As Double, pTjlIndex As Long, pTjl As Variant
     Set targetObj = Nothing
 
 End Function
+
