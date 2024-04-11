@@ -33,16 +33,16 @@ Function IndexOfMatchInRangeArray(matchValue As Variant, arr As Variant, dimensi
     For i = LBound(arr, dimension) To UBound(arr, dimension)
         If dimension = 1 Then
             If arr(i, 1) = matchValue Then
-                IndexOfMatch = i
+                IndexOfMatchInRangeArray = i
                 Exit Function
             End If
         Else
             If arr(1, i) = matchValue Then
-                IndexOfMatch = i
+                IndexOfMatchInRangeArray = i
                 Exit Function
             End If
         End If
     Next i
     ' Return -1 if no match is found
-    IndexOfMatch = -1
+    IndexOfMatchInRangeArray = -1
 End Function
