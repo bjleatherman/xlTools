@@ -1,19 +1,27 @@
-Private prevTjl As Long
-Private prevWt As Long
-Private plqSegLen As Long
-Private plqWt As Long
-Private plqGrade As Long
-Private plqType As Long
-Private startCol As Long
-Private endCol As Long
+Private pPrevTjl As Long
+Private pPrevWt As Long
+Private pPlqSegLen As Long
+Private pPlqWt As Long
+Private pPlqGrade As Long
+Private pPlqType As Long
+Private pStartCol As Long
+Private pEndCol As Long
 
 ' Constructor
-Public Sub Initialize(prevTjl As String, prevWt As String, plqSegLen As String, plqWt As String, _
-                        plqGrade As String, plqType As String, startCol As String, endCol As String)
-    Dim ws As Worksheet: Set ws = ActiveWorksheet
-    Dim colHeaders As Variant: colHeaders = GetDataFromRowNum(ws, 1)
+Public Sub Initialize(prevTjl As Long, prevWt As Long, plqSegLen As Long, plqWt As Long, _
+                        plqGrade As Long, plqType As Long, startCol As String, endCol As String)
     
+    pPrevTjl = prevTjl
+    pPrevWt = prevWt
+    pPlqSegLen = plqSegLen
+    pPlqWt = plqWt
+    pPlqGrade = plqGrade
+    pPlqType = plqType
     
+    startColIndex = ColLetToNumber(startCol)
+    endColIndex = ColLetToNumber(endCol)
+    
+    pStartCol = startColIndex
+    pEndCol = endColIndex
     
 End Sub
-
