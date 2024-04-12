@@ -1,6 +1,10 @@
 Private Sub UserForm_Initialize()
     Dim ws As Worksheet: Set ws = ActiveSheet
     Dim colHeaders As Variant: colHeaders = GetDataFromRowNum(ws, 1)
+    
+    ' Data
+    Set pData = New cPlqMatchData
+    
     'Comboboxes in the UserForm
     Dim cmbs As Variant: cmbs = Array(cmbPrevTjl, cmbPrevWt, cmbPlqSegLen, cmbPlqWt, cmbPlqGrade, cmdPlqType)
     
