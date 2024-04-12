@@ -9,20 +9,20 @@ Private Sub cmdSubmit_Click()
     plqGradeIndex = cmbPlqGrade.ListIndex + 1
     plqTypeIndex = cmdPlqType.ListIndex + 1
     
-    startCol = CStr(txtStartCol.Value)
-    endCol = CStr(txtEndCol.Value)
+    Dim formStartCol As String: formStartCol = CStr(txtStartCol.Value)
+    Dim formEndCol As String: formEndCol = CStr(txtEndCol.Value)
     
     ' Validate Column letters
-    isStartColValid = IsValidColLet(startCol)
-    isEndColValid = IsValidColLet(endCol)
+    isStartColValid = IsValidColLet(formStartCol)
+    isEndColValid = IsValidColLet(formEndCol)
     
     If isStartColValid = False Or isEndColValid = False Then
         MsgBox "Check PLQ start and end column letters"
         Exit Sub
     End If
     
-    startColIndex = ColLetToNumber(startCol)
-    endColIndex = ColLetToNumber(endCol)
+    startColIndex = ColLetToNumber(formStartCol)
+    endColIndex = ColLetToNumber(formEndCol)
     
     ' Validate Indexes
     If prevTjlIndex = 0 Or prevWtIndex = 0 Or plqSegLenIndex = 0 _
@@ -32,14 +32,14 @@ Private Sub cmdSubmit_Click()
         Exit Sub
     End If
     
-    pData.pPrevTjl = prevTjlIndex
-    pData.pPrevWt = prevWtIndex
-    pData.pPlqSegLen = plqSegLenIndex
-    pData.pPlqWt = plqWtIndex
-    pData.pPlqGrade = plqGradeIndex
-    pData.pPlqType = plqTypeIndex
-    pData.pStartCol = startColIndex
-    pData.pEndCol = isEndColValid
+    pData.PrevTjl = prevTjlIndex
+    pData.PrevWt = prevWtIndex
+    pData.PlqSegLen = plqSegLenIndex
+    pData.PlqWt = plqWtIndex
+    pData.PlqGrade = plqGradeIndex
+    pData.PlqType = plqTypeIndex
+    pData.startCol = startColIndex
+    pData.EndCol = isEndColValid
     
     Me.Hide
     
