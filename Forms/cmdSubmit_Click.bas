@@ -1,6 +1,6 @@
 Private Sub cmdSubmit_Click()
     
-    Dim Data As cPlqMatchData
+    Dim data As cPlqMatchData
     
     prevTjlIndex = cmbPrevTjl.ListIndex + 1
     prevWtIndex = cmbPrevWt.ListIndex + 1
@@ -9,14 +9,14 @@ Private Sub cmdSubmit_Click()
     plqGradeIndex = cmbPlqGrade.ListIndex + 1
     plqTypeIndex = cmdPlqType.ListIndex + 1
     
-    startCol = txtStartCol.Value
-    endCol = txtEndCol.Value
+    startCol = CStr(txtStartCol.Value)
+    endCol = CStr(txtEndCol.Value)
     
     ' Validate Column letters
     isStartColValid = IsValidColLet(startCol)
     isEndColValid = IsValidColLet(endCol)
     
-    If isStartColValid = False Or isEndColValid Then
+    If isStartColValid = False Or isEndColValid = False Then
         MsgBox "Check PLQ start and end column letters"
         Exit Sub
     End If
@@ -40,7 +40,7 @@ Private Sub cmdSubmit_Click()
     pData.pPlqType = plqTypeIndex
     pData.pStartCol = startColIndex
     pData.pEndCol = isEndColValid
-
+    
     Me.Hide
-
+    
 End Sub
