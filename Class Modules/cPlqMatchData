@@ -63,7 +63,7 @@ End Property
 
 'start col
 Public Property Get StartCol() As Long
-    StarCol = pStartCol
+    StartCol = pStartCol
 End Property
 
 Public Property Let StartCol(Value As Long)
