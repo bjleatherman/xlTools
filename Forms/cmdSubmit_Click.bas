@@ -40,5 +40,7 @@ Private Sub cmdSubmit_Click()
     pData.pPlqType = plqTypeIndex
     pData.pStartCol = startColIndex
     pData.pEndCol = isEndColValid
-    
+
+    Me.Hide
+
 End Sub
