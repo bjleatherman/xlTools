@@ -1,7 +1,6 @@
-
 Private Sub cmdSubmit_Click()
     
-    Dim data As cPlqMatchData
+    Dim Data As cPlqMatchData
     
     prevTjlIndex = cmbPrevTjl.ListIndex + 1
     prevWtIndex = cmbPrevWt.ListIndex + 1
