@@ -11,7 +11,8 @@ Sub MatchPlq()
     Dim insertRange As Range
     Dim plqTjlStart As Long
     Dim formData As cPlqMatchData
-   
+    
+    
     'Dim frm As Object
     'Set frm = New UserForm
     'frm.Show
@@ -19,17 +20,17 @@ Sub MatchPlq()
     ' show form
     uGetColsForPlqMatch.Show
     
-    formData = uGetColsForPlqMatch.data
+    Set formData = uGetColsForPlqMatch.Data
     
     ' get data from form
-    'pTjl = uGetColsForPlqMatch.data.pPrevTjl
-    'pWt = uGetColsForPlqMatch.data.pPrevWt
-    'plqTjl = uGetColsForPlqMatch.data.pPlqSegLen
-    'plqWt = uGetColsForPlqMatch.data.pPlqWt
-    'plqGrade = uGetColsForPlqMatch.data.pPlqGrade
-    'plqType = uGetColsForPlqMatch.data.pPlqType
-    'firstInsertCol = uGetColsForPlqMatch.data.pStartCol
-    'lastInsertCol = uGetColsForPlqMatch.data.pEndCol
+    pTjl = formData.PrevTjl
+    pWt = formData.PrevWt
+    plqTjl = formData.PlqSegLen
+    PlqWt = formData.PlqWt
+    PlqGrade = formData.PlqGrade
+    PlqType = formData.PlqType
+    firstInsertCol = formData.StartCol
+    lastInsertCol = formData.EndCol
     
     Unload uGetColsForPlqMatch
     
