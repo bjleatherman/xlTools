@@ -62,11 +62,11 @@ Public Property Let PlqType(Value As Long)
 End Property
 
 'start col
-Public Property Get StarCol() As Long
+Public Property Get StartCol() As Long
     StarCol = pStartCol
 End Property
 
-Public Property Let StarCol(Value As Long)
+Public Property Let StartCol(Value As Long)
     pStartCol = Value
 End Property
 
