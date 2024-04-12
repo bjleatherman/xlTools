@@ -1,81 +1,81 @@
-Private pPrevTjl As Long
-Private pPrevWt As Long
-Private pPlqSegLen As Long
-Private pPlqWt As Long
-Private pPlqGrade As Long
-Private pPlqType As Long
-Private pStartCol As Long
-Private pEndCol As Long
+Private pPrevTjlColIndex As Long
+Private pPrevWtColIndex As Long
+Private pPlqSegLenColIndex As Long
+Private pPlqWtColIndex As Long
+Private pPlqGradeColIndex As Long
+Private pPlqTypeColIndex As Long
+Private pStartColIndex As Long
+Private pEndColIndex As Long
 
 ' pTJL
-Public Property Get PrevTjl() As Long
-    PrevTjl = pPrevTjl
+Public Property Get PrevTjlColIndex() As Long
+    PrevTjlColIndex = pPrevTjlColIndex
 End Property
 
-Public Property Let PrevTjl(Value As Long)
-    pPrevTjl = Value
+Public Property Let PrevTjlColIndex(Value As Long)
+    pPrevTjlColIndex = Value
 End Property
 
 'pWT
-Public Property Get PrevWt() As Long
-    PrevWt = pPrevWt
+Public Property Get PrevWtColIndex() As Long
+    PrevWtColIndex = pPrevWtColIndex
 End Property
 
-Public Property Let PrevWt(Value As Long)
-    pPrevWt = Value
+Public Property Let PrevWtColIndex(Value As Long)
+    pPrevWtColIndex = Value
 End Property
 
 'plq seg len
-Public Property Get PlqSegLen() As Long
-    PlqSegLen = pPlqSegLen
+Public Property Get PlqSegLenColIndex() As Long
+    PlqSegLenColIndex = pPlqSegLenColIndex
 End Property
 
-Public Property Let PlqSegLen(Value As Long)
-    pPlqSegLen = Value
+Public Property Let PlqSegLenColIndex(Value As Long)
+    pPlqSegLenColIndex = Value
 End Property
 
 'plq wt
-Public Property Get PlqWt() As Long
-    PlqWt = pPlqWt
+Public Property Get PlqWtColIndex() As Long
+    PlqWtColIndex = pPlqWtColIndex
 End Property
 
-Public Property Let PlqWt(Value As Long)
-    pPlqWt = Value
+Public Property Let PlqWtColIndex(Value As Long)
+    pPlqWtColIndex = Value
 End Property
 
 'plq grade
-Public Property Get PlqGrade() As Long
-    PlqGrade = pPlqGrade
+Public Property Get PlqGradeColIndex() As Long
+    PlqGradeColIndex = pPlqGradeColIndex
 End Property
 
-Public Property Let PlqGrade(Value As Long)
-    pPlqGrade = Value
+Public Property Let PlqGradeColIndex(Value As Long)
+    pPlqGradeColIndex = Value
 End Property
 
 'plq type
-Public Property Get PlqType() As Long
-    PlqType = pPlqType
+Public Property Get PlqTypeColIndex() As Long
+    PlqTypeColIndex = pPlqTypeColIndex
 End Property
 
-Public Property Let PlqType(Value As Long)
-    pPlqType = Value
+Public Property Let PlqTypeColIndex(Value As Long)
+    pPlqTypeColIndex = Value
 End Property
 
 'start col
-Public Property Get StartCol() As Long
-    StartCol = pStartCol
+Public Property Get StartColIndex() As Long
+    StartColIndex = pStartColIndex
 End Property
 
-Public Property Let StartCol(Value As Long)
-    pStartCol = Value
+Public Property Let StartColIndex(Value As Long)
+    pStartColIndex = Value
 End Property
 
 'end col
-Public Property Get EndCol() As Long
-    EndCol = pEndCol
+Public Property Get EndColIndex() As Long
+    EndColIndex = pEndColIndex
 End Property
 
-Public Property Let EndCol(Value As Long)
-    pEndCol = Value
+Public Property Let EndColIndex(Value As Long)
+    pEndColIndex = Value
 End Property
 
