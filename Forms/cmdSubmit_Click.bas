@@ -21,8 +21,8 @@ Private Sub cmdSubmit_Click()
         Exit Sub
     End If
     
-    startColIndex = ColLetToNumber(formStartCol)
-    endColIndex = ColLetToNumber(formEndCol)
+    StartColIndex = ColLetToNumber(formStartCol)
+    EndColIndex = ColLetToNumber(formEndCol)
     
     ' Validate Indexes
     If prevTjlIndex = 0 Or prevWtIndex = 0 Or plqSegLenIndex = 0 _
@@ -32,14 +32,14 @@ Private Sub cmdSubmit_Click()
         Exit Sub
     End If
     
-    pData.PrevTjl = prevTjlIndex
-    pData.PrevWt = prevWtIndex
-    pData.PlqSegLen = plqSegLenIndex
-    pData.PlqWt = plqWtIndex
-    pData.PlqGrade = plqGradeIndex
-    pData.PlqType = plqTypeIndex
-    pData.StartCol = startColIndex
-    pData.EndCol = endColIndex
+    pData.PrevTjlColIndex = prevTjlIndex
+    pData.PrevWtColIndex = prevWtIndex
+    pData.PlqSegLenColIndex = plqSegLenIndex
+    pData.PlqWtColIndex = plqWtIndex
+    pData.PlqGradeColIndex = plqGradeIndex
+    pData.PlqTypeColIndex = plqTypeIndex
+    pData.StartColIndex = StartColIndex
+    pData.EndColIndex = EndColIndex
     
     Me.Hide
     
