@@ -23,27 +23,24 @@ Sub MatchPlq()
     Set formData = uGetColsForPlqMatch.Data
     
     ' get data from form
-    pTjlColIndex = formData.PrevTjlColIndex
-    pWtColIndex = formData.PrevWtColIndex
-    plqTjlColIndex = formData.PlqSegLenColIndex
-    PlqWtColIndex = formData.PlqWtColIndex
-    PlqGradeColIndex = formData.PlqGradeColIndex
-    PlqTypeColIndex = formData.PlqTypeColIndex
-    firstInsertCol = formData.StartColIndex
-    lastInsertCol = formData.EndColIndex
+    Dim pTjlColIndex As Long: pTjlColIndex = formData.PrevTjlColIndex
+    Dim pWtColIndex As Long: pWtColIndex = formData.PrevWtColIndex
+    Dim plqTjlColIndex As Long: plqTjlColIndex = formData.PlqSegLenColIndex
+    Dim plqWtColIndex As Long: plqWtColIndex = formData.plqWtColIndex
+    Dim PlqGradeColIndex As Long: PlqGradeColIndex = formData.PlqGradeColIndex
+    Dim PlqTypeColIndex As Long: PlqTypeColIndex = formData.PlqTypeColIndex
+    Dim firstInsertCol As Long: firstInsertCol = formData.StartColIndex
+    Dim lastInsertCol As Long: lastInsertCol = formData.EndColIndex
+    
+    Debug.Print TypeName(pWtColIndex)
+    Debug.Print pWtColIndex
+    
+    pWtColIndex = 2
+    
+    Debug.Print TypeName(pWtColIndex)
+    Debug.Print pWtColIndex
     
     Unload uGetColsForPlqMatch
-    
-    'Debug.Print "pTjl: " & pTjlColIndex
-    'Debug.Print "pWt: " & pWtColIndex
-    'Debug.Print "plqTjl: " & plqTjlColIndex
-    'Debug.Print "plqWt: " & PlqWtColIndex
-    'Debug.Print "plqGrade: " & PlqGradeColIndex
-    'Debug.Print "plqType: " & PlqTypeColIndex
-    'Debug.Print "firstInsertCol: " & FirstInsertCol
-    'Debug.Print "lastInsertCol: " & lastInsertCol
-    
-    'Exit Sub
     
     '''''Get Data'''''
     With ws
@@ -53,7 +50,7 @@ Sub MatchPlq()
         ' Previous TJL
         Dim pTjl As Variant: pTjl = GetDataFromColNum(ws, pTjlColIndex)
         ' PLQ WT
-        Dim plqWt As Variant: plqWt = GetDataFromColNum(ws, PlqWtColIndex)
+        Dim plqWt As Variant: plqWt = GetDataFromColNum(ws, plqWtColIndex)
         ' PLQ Grade
         Dim plqGrade As Variant: plqGrade = GetDataFromColNum(ws, PlqGradeColIndex)
         ' PLQ Type
