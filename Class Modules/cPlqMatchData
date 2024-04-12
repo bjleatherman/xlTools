@@ -18,7 +18,7 @@ End Property
 
 'pWT
 Public Property Get PrevWt() As Long
-    PrevTjl = pPrevWt
+    PrevWt = pPrevWt
 End Property
 
 Public Property Let PrevWt(Value As Long)
@@ -27,7 +27,7 @@ End Property
 
 'plq seg len
 Public Property Get PlqSegLen() As Long
-    PrevTjl = pPlqSegLen
+    PlqSegLen = pPlqSegLen
 End Property
 
 Public Property Let PlqSegLen(Value As Long)
@@ -36,7 +36,7 @@ End Property
 
 'plq wt
 Public Property Get PlqWt() As Long
-    PrevTjl = pPlqWt
+    PlqWt = pPlqWt
 End Property
 
 Public Property Let PlqWt(Value As Long)
@@ -45,7 +45,7 @@ End Property
 
 'plq grade
 Public Property Get PlqGrade() As Long
-    PrevTjl = pPlqGrade
+    PlqGrade = pPlqGrade
 End Property
 
 Public Property Let PlqGrade(Value As Long)
@@ -54,7 +54,7 @@ End Property
 
 'plq type
 Public Property Get PlqType() As Long
-    PrevTjl = pPlqType
+    PlqType = pPlqType
 End Property
 
 Public Property Let PlqType(Value As Long)
@@ -63,7 +63,7 @@ End Property
 
 'start col
 Public Property Get StarCol() As Long
-    PrevTjl = pStartCol
+    StarCol = pStartCol
 End Property
 
 Public Property Let StarCol(Value As Long)
@@ -72,7 +72,7 @@ End Property
 
 'end col
 Public Property Get EndCol() As Long
-    PrevTjl = pEndCol
+    EndCol = pEndCol
 End Property
 
 Public Property Let EndCol(Value As Long)
