@@ -23,43 +23,43 @@ Sub MatchPlq()
     Set formData = uGetColsForPlqMatch.Data
     
     ' get data from form
-    pTjl = formData.PrevTjl
-    pWt = formData.PrevWt
-    plqTjl = formData.PlqSegLen
-    PlqWt = formData.PlqWt
-    PlqGrade = formData.PlqGrade
-    PlqType = formData.PlqType
-    firstInsertCol = formData.StartCol
-    lastInsertCol = formData.EndCol
+    pTjlColIndex = formData.PrevTjlColIndex
+    pWtColIndex = formData.PrevWtColIndex
+    plqTjlColIndex = formData.PlqSegLenColIndex
+    PlqWtColIndex = formData.PlqWtColIndex
+    PlqGradeColIndex = formData.PlqGradeColIndex
+    PlqTypeColIndex = formData.PlqTypeColIndex
+    firstInsertCol = formData.StartColIndex
+    lastInsertCol = formData.EndColIndex
     
     Unload uGetColsForPlqMatch
     
-    Debug.Print "pTjl: " & pTjl
-    Debug.Print "pWt: " & pWt
-    Debug.Print "plqTjl: " & pWt
-    Debug.Print "plqWt: " & PlqWt
-    Debug.Print "plqGrade: " & PlqGrade
-    Debug.Print "plqType: " & PlqType
-    Debug.Print "firstInsertCol: " & firstInsertCol
-    Debug.Print "lastInsertCol: " & lastInsertCol
+    'Debug.Print "pTjl: " & pTjlColIndex
+    'Debug.Print "pWt: " & pWtColIndex
+    'Debug.Print "plqTjl: " & plqTjlColIndex
+    'Debug.Print "plqWt: " & PlqWtColIndex
+    'Debug.Print "plqGrade: " & PlqGradeColIndex
+    'Debug.Print "plqType: " & PlqTypeColIndex
+    'Debug.Print "firstInsertCol: " & FirstInsertCol
+    'Debug.Print "lastInsertCol: " & lastInsertCol
     
-    Exit Sub
+    'Exit Sub
     
     '''''Get Data'''''
     With ws
         
-        '' Previous WT
-        'Dim pWt As Variant: pWt = GetDataFromColNum(ws, 2)
-        '' Previous TJL
-        'Dim pTjl As Variant: pTjl = GetDataFromColNum(ws, 3)
-        '' PLQ WT
-        'Dim plqWt As Variant: plqWt = GetDataFromColNum(ws, 6)
-        '' PLQ Grade
-        'Dim plqGrade As Variant: plqGrade = GetDataFromColNum(ws, 5)
-        '' PLQ Type
-        'Dim plqType As Variant: plqType = GetDataFromColNum(ws, 7)
-        '' PLQ TJL
-        'Dim plqTjl As Variant: plqTjl = GetDataFromColNum(ws, 4)
+        ' Previous WT
+        Dim pWt As Variant: pWt = GetDataFromColNum(ws, pWtColIndex)
+        ' Previous TJL
+        Dim pTjl As Variant: pTjl = GetDataFromColNum(ws, pTjlColIndex)
+        ' PLQ WT
+        Dim plqWt As Variant: plqWt = GetDataFromColNum(ws, PlqWtColIndex)
+        ' PLQ Grade
+        Dim plqGrade As Variant: plqGrade = GetDataFromColNum(ws, PlqGradeColIndex)
+        ' PLQ Type
+        Dim plqType As Variant: plqType = GetDataFromColNum(ws, PlqTypeColIndex)
+        ' PLQ TJL
+        Dim plqTjl As Variant: plqTjl = GetDataFromColNum(ws, plqTjlColIndex)
     
     '''''Loop through data'''''
     
@@ -86,7 +86,7 @@ Sub MatchPlq()
                 ' Get Target Row
                 targetRow = targetObj.TjlTargetIndex
                 
-                contextTargetRow = GetTargetRowWithWtContext(pTjl, pWt, cTjlRow, i, plqTjl, PlqWt, lastRow)
+                contextTargetRow = GetTargetRowWithWtContext(pTjl, pWt, cTjlRow, i, plqTjl, plqWt, lastRow)
                 
                 ' Determine if a new line needs to be inserted
                 If targetRow = cTjlRow Then
@@ -110,7 +110,7 @@ Sub MatchPlq()
 
 End Sub
 
-Function GetTargetRowWithWtContext(pTjl As Variant, pWt As Variant, cRow As Long, plqIndex As Variant, plqTjl As Variant, PlqWt As Variant, lastRow As Long) As Long
+Function GetTargetRowWithWtContext(pTjl As Variant, pWt As Variant, cRow As Long, plqIndex As Variant, plqTjl As Variant, plqWt As Variant, lastRow As Long) As Long
 
     Dim minimumCellSearch As Integer: minimumCellSearch = 5
     Dim odoDriftComp As Double: odoDriftComp = 0.01
