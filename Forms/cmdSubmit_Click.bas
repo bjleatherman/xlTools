@@ -1,3 +1,4 @@
+
 Private Sub cmdSubmit_Click()
     
     Dim data As cPlqMatchData
@@ -38,8 +39,8 @@ Private Sub cmdSubmit_Click()
     pData.PlqWt = plqWtIndex
     pData.PlqGrade = plqGradeIndex
     pData.PlqType = plqTypeIndex
-    pData.startCol = startColIndex
-    pData.EndCol = isEndColValid
+    pData.StartCol = startColIndex
+    pData.EndCol = endColIndex
     
     Me.Hide
     
