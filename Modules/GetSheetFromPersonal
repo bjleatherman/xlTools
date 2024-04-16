@@ -8,7 +8,7 @@ Sub CopySheetFromPersonalWb(sheetName As String)
     Dim sourceSheet As Worksheet
 
     ' Set the target workbook to the active workbook
-    Set targetWorkbook = ThisWorkbook
+    Set targetWorkbook = ActiveWorkbook
 
     ' Attempt to open PERSONAL.XLSB from the Excel start folder
     On Error Resume Next
