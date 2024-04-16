@@ -1,20 +1,20 @@
 Sub GetImportFeaturesCsv()
-    CopySheetAndSave "JobNum Import Features"
+    CopySheetAndSave "JobNum Import Features", "Import Features"
 End Sub
 
 Sub GetImportJointNoCsv()
-    CopySheetAndSave "JobNum Import Joint No"
+    CopySheetAndSave "JobNum Import Joint No", "Import Joint No"
 End Sub
 
 Sub GetImportWeldsCsv()
-    CopySheetAndSave "JobNum Import Welds"
+    CopySheetAndSave "JobNum Import Welds", "Import Welds"
 End Sub
 
 Sub GetImportGpsCsv()
-    CopySheetAndSave "JobNum GPS Interp"
+    CopySheetAndSave "JobNum GPS Interp", "GPS Interp"
 End Sub
 
-Sub CopySheetAndSave(sheetName)
+Sub CopySheetAndSave(sheetName, defaultName)
     
     Dim sourceWorkbook As Workbook
     Dim newWorkbook As Workbook
@@ -45,7 +45,7 @@ Sub CopySheetAndSave(sheetName)
 
     ' Ask user to specify the filename and path to save the workbook
     savePath = Application.GetSaveAsFilename( _
-        InitialFileName:="Import Features.csv", _
+        InitialFileName:=defaultName & ".csv", _
         FileFilter:="Csv (*.csv), *.csv", _
         Title:="Save As")
 
