@@ -14,6 +14,18 @@ Sub GetImportGpsCsv()
     CopySheetAndSave "JobNum GPS Interp", "GPS Interp"
 End Sub
 
+Sub GetAddCommentsCsv()
+    CopySheetAndSave "JobNum Add Comments", "Add Comments"
+End Sub
+
+Sub GetAddFeaturesCsv()
+    CopySheetAndSave "JobNum Add Features", "Add Features"
+End Sub
+
+Sub GetAddWeldAttributesCsv()
+    CopySheetAndSave "JobNum Weld Attributes", "Weld Attributes"
+End Sub
+
 Sub CopySheetAndSave(sheetName, defaultName)
     
     Dim sourceWorkbook As Workbook
