@@ -26,7 +26,7 @@ Sub GetAddWeldAttributesCsv()
     CopySheetAndSave "JobNum Weld Attributes", "Weld Attributes"
 End Sub
 
-Sub CopySheetAndSave(sheetName, defaultName)
+Sub CopySheetAndSave(sheetName As String, defaultName As String)
     
     Dim sourceWorkbook As Workbook
     Dim newWorkbook As Workbook
@@ -58,16 +58,16 @@ Sub CopySheetAndSave(sheetName, defaultName)
     ' Ask user to specify the filename and path to save the workbook
     savePath = Application.GetSaveAsFilename( _
         InitialFileName:=defaultName & ".csv", _
-        FileFilter:="Csv (*.csv), *.csv", _
+        FileFilter:="CSV (Comma delimited) (*.csv), *.csv", _
         Title:="Save As")
 
     ' Check if the user has cancelled the dialog
     If savePath <> False Then
-        newWorkbook.SaveAs Filename:=savePath, FileFormat:=xlOpenXMLWorkbook
+        ' Save the new workbook as a CSV file
+        newWorkbook.SaveAs Filename:=savePath, FileFormat:=xlCSV, CreateBackup:=False
     End If
 
-    ' Keep the new workbook open and show it
-    newWorkbook.Activate
 End Sub
+
 
 
