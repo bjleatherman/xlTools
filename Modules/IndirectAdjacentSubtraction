@@ -1,0 +1,5 @@
+Sub IndirectAdjSubtraction()
+    With ActiveCell
+        .Value = "=Round(Indirect(Address(Row(),Column()-1))-Indirect(Address(Row(),Column()+1)),3)"
+    End With
+End Sub
