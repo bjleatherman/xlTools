@@ -2,6 +2,11 @@ Sub GetShelbyGwMatch()
     CopySheetFromPersonalWb "Shelby GW Comparison"
 End Sub
 
+Sub GetDigSheetTracker()
+    CopySheetFromPersonalWb "Dig Options"
+    CopySheetFromPersonalWb "Dig Tracker"
+End Sub
+
 Sub CopySheetFromPersonalWb(sheetName As String)
     Dim sourceWorkbook As Workbook
     Dim targetWorkbook As Workbook
