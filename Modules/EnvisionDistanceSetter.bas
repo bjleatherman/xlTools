@@ -1,9 +1,16 @@
 Sub SetDistanceInEnvision()
 
     Dim userVal As Variant: userVal = ActiveCell.Value
-    Dim scriptPath As String: scriptPath = "C:\UtilScripts\goToEnvDist.py"
+    
+    ' Python
+    Dim scriptPathFile As String: scriptPathFile = "C:\UtilScripts\goToEnvDist.py"
+    Dim commandFile As String: commandFile = "python " & scriptPathFile & " " & userVal
+    
+    ' .Exe
+    Dim scriptPath As String: scriptPath = "C:\UtilScripts\goToEnvDist.exe"
+    Dim command As String: command = scriptPath & " " & userVal
+    
     Dim shell As Object: Set shell = CreateObject("WScript.Shell")
-    Dim command As String: command = "python " & scriptPath & " " & userVal
     
     If Not IsNumeric(userVal) Then
         'Debug.Print "bad"
