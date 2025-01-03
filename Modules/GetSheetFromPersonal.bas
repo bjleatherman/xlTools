@@ -44,4 +44,7 @@ Sub CopySheetFromPersonalWb(sheetName As String)
 
     ' Optionally, activate the copied sheet
     targetWorkbook.Sheets(sheetName).Activate
+
+    Application.ScreenUpdating = True
+
 End Sub
