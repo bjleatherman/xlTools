@@ -7,7 +7,14 @@ Sub GetDigSheetTracker()
     CopySheetFromPersonalWb "Dig Tracker"
 End Sub
 
+Sub GetWtReviewer()
+    CopySheetFromPersonalWb "JBL Review"
+End Sub
+
 Sub CopySheetFromPersonalWb(sheetName As String)
+    
+    Application.ScreenUpdating = False
+
     Dim sourceWorkbook As Workbook
     Dim targetWorkbook As Workbook
     Dim sourceSheet As Worksheet
