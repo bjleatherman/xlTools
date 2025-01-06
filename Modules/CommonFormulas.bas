@@ -1,6 +1,6 @@
 Sub IndirectAdjSubtraction()
     With ActiveCell
-        .Value = "=Round(Indirect(Address(Row(),Column()-1))-Indirect(Address(Row(),Column()+1)),3)"
+        .Value = "=Round(Indirect(Address(Row(),Column()-1))-Indirect(Address(Row(),Column()+1)),1)"
     End With
 End Sub
 Sub ReverseOrientation()
